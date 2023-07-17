@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Novo Chamado</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+}
+
+input[type="text"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+input[type="submit"] {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+
+    </style>
+    <script>
+        window.onload = function() {
+            var now = new Date();
+            var month = (now.getMonth() + 1); 
+            var day = now.getDate();
+            if(month < 10) 
+                month = "0" + month;
+            if(day < 10) 
+                day = "0" + day;
+            var today = now.getFullYear() + '-' + month + '-' + day;
+            document.getElementById('creationDate').value = today;
+
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            if(hour < 10) 
+                hour = "0" + hour;
+            if(minute < 10) 
+                minute = "0" + minute;
+            var time = hour + ":" + minute;
+            document.getElementById('creationTime').value = time;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Crie novo chamado</h1>
+    <form>
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title"><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description"></textarea><br>
+        <label for="category">Category:</label><br>
+        <select id="category" name="category">
+            <option value="">Selecione a categoria</option>
+            <option value="hardware">Hardware</option>
+            <option value="software">Software</option>
+            <option value="network">Network</option>
+        </select><br>
+        <label for="creationDate">Data de Criação :</label><br>
+        <input type="date" id="creationDate" name="creationDate"><br>
+        <label for="creationTime">Data de Abertura:</label><br>
+        <input type="time" id="creationTime" name="creationTime"><br>
+        <label for="author">Autor:</label><br>
+        <input type="text" id="author" name="author"><br>
+        <input type="submit" value="Create Ticket">
+    </form>
+</body>
+</html>
