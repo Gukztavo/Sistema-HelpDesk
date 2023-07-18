@@ -2,9 +2,8 @@
 <html>
 
 <head>
-    <title>Helpdesk</title>
+    <title>GustavoDesk</title>
     <style>
-        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -30,7 +29,7 @@
         }
 
         nav ul li a {
-            color: #ffffff;
+            color: #fff;
             text-decoration: none;
         }
 
@@ -48,30 +47,52 @@
             bottom: 0;
             width: 100%;
         }
+
         tbody {
-            background-color: #f1e9e9;
+            background-color: #fff;
             color: #333;
-            border: 1px solid black;
-            align-items: center;
-           
         }
+
+        tr {
+            text-align: center;
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 25px;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #333;
+            color: white;
+        }
+
+        td:hover {background-color: #a4f376;}
     </style>
 </head>
 
 <body>
-   
-
     <header>
-        
         <nav>
             <ul>
-                <h1>Helpdesk</h1>
+                <h1>GustavoDesk</h1>
                 <button >Novo Chamado</button>
             </ul>
 
         </nav>
     </header>
-<div class="center">
+
     <table>
         <thead>
             <tr>
@@ -89,9 +110,19 @@
                 <td>This is an example ticket description.</td>
                 <td>Open</td>
             </tr>
+            <tr>
+                <td><a href="ticket.html?id=1">1</a></td>
+                <td>Example Ticket</td>
+                <td>This is an example ticket description.</td>
+                <td>Open</td>
+            </tr>
         </tbody>
-    </div>
     </table>
+    <footer>
+        <p>© 2023 GustavoDesk. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
+
+

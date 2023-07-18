@@ -1,90 +1,126 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Novo Chamado</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-}
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
 
-header {
-    background-color: #f8f9fa;
-    padding: 10px 0;
-}
+        h1 {
+          text-align: center;
+        }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-}
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
 
-nav ul li a {
-    color: #333;
-    text-decoration: none;
-}
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
 
-h1 {
-    color: #333;
-    text-align: center;
-}
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-form {
-    width: 80%;
-    margin: 0 auto;
-}
+        main {
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            /* Adicionado para posicionar o pseudo-elemento relativo ao 'main' */
+        }
 
-label {
-    display: block;
-    margin-top: 20px;
-}
+        main::after {
+            content: "";
+            display: block;
+            height: 40px;
+            /* altura do rodapé */
+        }
 
-input[type="text"], textarea, select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-}
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 25px;
+        }
 
-input[type="submit"] {
-    display: block;
-    margin-top: 20px;
-    padding: 10px 20px;
-}
 
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        form input,
+        form select,
+        form textarea {
+            width: 50%;
+            padding: 10px;
+        }
     </style>
     <script>
-        window.onload = function() {
+        window.onload = function () {
             var now = new Date();
-            var month = (now.getMonth() + 1); 
+            var month = (now.getMonth() + 1);
             var day = now.getDate();
-            if(month < 10) 
+            if (month < 10)
                 month = "0" + month;
-            if(day < 10) 
+            if (day < 10)
                 day = "0" + day;
             var today = now.getFullYear() + '-' + month + '-' + day;
             document.getElementById('creationDate').value = today;
 
             var hour = now.getHours();
             var minute = now.getMinutes();
-            if(hour < 10) 
+            if (hour < 10)
                 hour = "0" + hour;
-            if(minute < 10) 
+            if (minute < 10)
                 minute = "0" + minute;
             var time = hour + ":" + minute;
             document.getElementById('creationTime').value = time;
         }
     </script>
 </head>
+
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <button>Voltar aos Chamados</button>
             </ul>
+
         </nav>
     </header>
     <h1>Crie novo chamado</h1>
@@ -106,7 +142,11 @@ input[type="submit"] {
         <input type="time" id="creationTime" name="creationTime"><br>
         <label for="author">Autor:</label><br>
         <input type="text" id="author" name="author"><br>
-        <input type="submit" value="Create Ticket">
+        <button>Criar</button>
     </form>
+    <footer>
+        <p>© 2023 GustavoDesk. All rights reserved.</p>
+    </footer>
 </body>
+
 </html>
