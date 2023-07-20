@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .dashboard-section {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .dashboard-section h2 {
+            margin-bottom: 20px;
+        }
+
+        /* This is where your chart will be displayed */
+        .chart-container {
+            height: 400px;
+            position: relative;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>  
+                <li style="float:right"><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Dashboard</h1>
+    <section class="dashboard-section">
+        <h2>Chamados aberto por categorias
+        </h2>
+        <div class="chart-container">
+            <!-- Your chart will go here -->
+        </div>
+    </section>
+    <section class="dashboard-section">
+        <h2>SLA</h2>
+        <div class="chart-container">
+            <!-- Your chart will go here -->
+        </div>
+    </section>
+</body>
+</html>

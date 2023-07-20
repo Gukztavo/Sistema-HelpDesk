@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ticket Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            background-color: #4CAF50;
+            border-radius: 10%;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+            min-height: calc(100vh - 60px);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .ticket-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ticket-details div {
+            width: 50%;
+            padding: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{url_for('home')}}">Home</a></li>
+        </nav>
+
+    </header>
+    <h1>Ticket Details</h1>
+    <form action="{{url_for('excluir')}}"method="post">
+    <div class="ticket-details" >
+        
+        <h2>Ticket ID:{{ticket.id}}</h2>
+        <h3>Title:{{ticket.title}}</h3>
+        <p>Description:{{ticket.description}}</p>
+        <p>Status:{{ticket.status_id}}</p>
+        <select id="category" name="category">
+            <option value="">Selecione o status</option>
+            <option value="Em atendimento">Em andamento</option>
+            <option value="Resolvido">Resolvido</option>
+        </select><br>
+        <p>Data Abertura:{{ticket.created_at}}</p>
+        <p>Data Fechamento:{{ticket.solved_at}}</p>
+        <p>Autor:{{ticket.created_by}} </p>
+        <p>Atendente : {{ticket.handled_by}}</p>
+        <button type="submit">Excluir</a></button>
+        <button class="save">Salvar </button>
+          
+    </div>
+</form>
+    <footer>
+        <p>© 2023 Helpdesk. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
