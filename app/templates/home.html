@@ -6,86 +6,7 @@
     <link rel="stylesheet" type="text/css"
         href="C:\Users\gustavo.ozorio\OneDrive - PRESTES\Documentos\ProjetoPY-master\app\static\css\home.css"
         media="screen" />
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            text-align: center;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        tbody {
-            background-color: #fff;
-            color: #333;
-        }
-
-        tr {
-            text-align: center;
-        }
-
-        table {
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 25px;
-            border-collapse: collapse;
-            width: 80%;
-        }
-
-        th,
-        td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-
-        th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: #333;
-            color: white;
-        }
-
-        td:hover {
-            background-color: #a4f376;
-        }
-    </style>
+    <link rel="stylesheet" href="/../static/css/home.css">
 </head>
 
 <body>
@@ -93,15 +14,10 @@
         <nav>
             <ul>
                 <h1>GustavoDesk</h1>
-                <button><a href="{{url_for('newticket')}}">Novo Chamado</a></button>
-            </ul>
-            <nav>
-                <ul>
-                    <li><a href="login.html">Logout</a></li>
-                    <li style="float:right"><a href="#">Logout</a></li>
-                </ul>
-            </nav>
+                <button><a href="{{url_for('new_ticket')}}">Novo Chamado</a></button>
+                <button><a href="">Dashboard</a></button>
 
+            </ul>
         </nav>
     </header>
 
@@ -113,6 +29,7 @@
                 <th>Description</th>
                 <th>Status</th>
                 <th>Categoria</th>
+                <th>Excluir</th>
             </tr>
         </thead>
 
@@ -121,11 +38,13 @@
             {% for tupla in lista %}
 
             <tr>
+                
                 <td><a href="{{url_for('ticket',numberTicket=tupla.id)}}">{{tupla.id}}</a></td>
                 <td>{{tupla.title}}</td>
                 <td>{{tupla.description}}</td>
                 <td>{{tupla.status_id}}</td>
                 <td>{{tupla.category_id}}</td>
+                <form method="post" action="{{url_for('excluir',numberTicket=tupla.id)}}"><td><button class="butao" type="submit">Excluir</button></td></form>
             </tr>
 
             {% endfor %}

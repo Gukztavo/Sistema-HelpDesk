@@ -69,13 +69,18 @@
         <h2>Chamados aberto por categorias
         </h2>
         <div class="chart-container">
-            <!-- Your chart will go here -->
+           {% for ticket in ticket %}
+           <tr>
+                <td>{{ ticket.category }}</td>
+                <td>{{ ticket.number_of_open_tickets }}</td>
+           </tr>
+           {% endfor %}
         </div>
     </section>
     <section class="dashboard-section">
         <h2>SLA</h2>
         <div class="chart-container">
-            <!-- Your chart will go here -->
+            
         </div>
     </section>
 </body>

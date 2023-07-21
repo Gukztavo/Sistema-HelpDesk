@@ -17,3 +17,15 @@ def excluir(id):
     with db.connect() as conn:
         conn.execute(text(f"DELETE FROM tickets WHERE id = '{id}'"))
         conn.commit()
+
+
+
+    
+    
+def update_status(status_id,id,solved_at):
+    with db.connect() as conn:
+        conn.execute(text(f"UPDATE tickets set status_id= '{status_id}', solved_at='{solved_at}' WHERE id = '{id}'"))
+        conn.commit()
+    
+
+
